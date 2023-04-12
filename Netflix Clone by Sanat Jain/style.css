@@ -1,0 +1,241 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+.Header {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/header-image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 6px 125px;
+}
+
+.Header nav {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 150px;
+}
+
+#navbtn {
+    display: flex;
+}
+#navbtn img{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    left: 44px;
+    margin: auto 16px;
+    
+}
+
+.navlang {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px;
+    border-radius: 6px;
+    padding-left: 30px;
+    padding-right: 10px;
+}
+
+
+.signin {
+    display: block;
+    text-align: center;
+    background-color: red;
+    margin-left: 10px;
+    padding: 10px 10px;
+    border-radius: 6px;
+    height: 100%;
+}
+
+
+.middle-text {
+    position: absolute;
+    display: block;
+    margin-top: 140px;
+    text-align: center;
+    left: 200px;  
+}
+
+#text-B {
+    font-size: 60px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    margin-bottom: 30px;
+}
+
+#text-M {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+#text-S {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.Register {
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    width: 60%;
+    position: relative;
+    top: 400px;
+    left: 240px;
+}
+
+#input-text{
+    width: 69%;
+    border-radius: 3px;
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7));
+    box-shadow: none;
+    outline: 1px #fff groove;
+    border: 0;
+    padding: 15px;
+    color :#fff
+}
+
+#registerbtn {
+    background-color: red;
+    width: 30%;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+
+/* ----------------------------Features-------------------------- */
+
+
+.Features{
+    padding: 60px 125px;
+}
+
+.row-odd{
+    display: flex;
+    border-top: 6px solid #303030;
+}
+.row-even{
+    display: flex;
+    flex-direction: row-reverse;
+    border-top: 6px solid #303030
+}
+.col-1 p{
+    width: 100%;
+    padding: 20px;
+    
+}
+
+.col-2 img{
+    width: 100%;
+    padding: 20px;
+}
+
+/* <!-- ------------------------------Frequently Asked-------------------------- --> */
+.frequentlyAsked{
+    padding: 60px 125px;
+    border-top: 6px solid #333;
+    align-content: center;
+    text-align: center;
+}
+.accordian{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+    list-style: none;
+}
+.accordian li{
+    width: 100%;
+    padding: 5px;
+    list-style: none;
+    
+}
+
+.accordian li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+
+}
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+input[type="radio"]{
+    display: none;
+}
+.accordian .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+.accordian input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+.accordian input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+#btmReg{
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    width: 60%;
+    margin: auto;
+}
+/*<!-------------------------footer---------------------------*/
+.footer{
+    padding: 60px 125px;
+    color: rgba(255, 255, 255, 0.7);
+    border-top: 6px solid #333;
+
+}
+.f-row{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: underline;
+}
+.f-col-1 p, .f-col-2 p, .f-col-3 p{
+    margin-bottom: 20px;
+}
+.footer h3{
+    margin-bottom: 30px;
+}
+.footer h3 span{
+    text-decoration: underline;
+}
+
+.bottomlang{
+    position: absolute;
+    margin-top: 10px;
+    left: 75px;
+}
+
+.copyright{
+    margin-top: 50px;
+
+}
