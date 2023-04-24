@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        know = {
+        
+        "hello" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Hi there!",
+        "HELLO" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Hi there!",
+        "Who are you?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am Career Assistant",
+        "How are you?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  I am Fine",
+        "How old are you?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am infinity in age"
+        
+        
+        
+        
+        };
+        
+        function talk() {
+        var user = document.getElementById("userBox").value;
+        document.getElementById("userBox").value= "";
+        document.getElementById("chatLog").innerHTML += user+"<br>";
+        
+        if (user in know) {
+        document.getElementById("chatLog").innerHTML += know[user] + "<br>";
+        } else 
+        
+        {
+        document.getElementById("chatLog").innerHTML += "Our executive will reach you within 1 hour <br>";
+        }
+        }
+        </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Level Chat-Box UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- chat box -->
+        <div class="chat-box">
+            <!-- client -->
+            <div class="client">
+                <img src="logo.png" alt="logo" />
+                <div class="client-info">
+                    <h2>Support</h2>
+                    <p>online</p>
+                </div>
+            </div>
+            <div>
+                <div class="chats">
+                <p class="client-chat">Hi! I am Career Assitant,How can i help you?</p>>
+                <p id="chatLog" class="client-chat"><br> </p>
+                </div>
+                
+            </div>
+            <!-- input field section -->
+            <div class="chat-input">
+                <input id="userBox" type="text"  placeholder="Enter Message" />
+                <button class="send-btn" onmouseup="if(window.event.which==1) {talk()}">
+                    <img src="send.png" alt="send-btn">
+                </button>
+            </div>
+        </div>
+
+        <!-- button -->
+        <div class="chat-btn">
+            <img src="circle.png" alt="chat box icon btn" onclick="history.back()">
+        </div>
+    </div>
+ <script src="toggle.js">
+ </script>
+</body>
+
+</html>
