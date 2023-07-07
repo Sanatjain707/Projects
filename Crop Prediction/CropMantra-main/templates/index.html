@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="Header">
+    <div class="siteName">
+      <h1>Crop Yield Prediction</h1>
+    </div>
+  </div>
+
+  <!-- -----------------NavBar Start------------------------- -->
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navv">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#prediction">Predict the Yeild</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#aboutProject">About Project</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"aria-current="page" href="#technology">Technologies Used</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#aboutUs">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ----------------NavBar END------------------ -->
+
+
+  <div class="container cnt-1" id="prediction">
+    <h1>Enter the details to get the Crop Yield Prediction...</h1>
+    <br>
+    <br>
+    <input type="text" id="cityName" placeholder="Enter your City Here.">
+    <button onclick="getWeather()">Select</button>
+    <button onclick="getCoodinate()">Get Location</button>
+    <h1 id="YourLocation"></h1>
+    <br>
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="nitrogen" placeholder="Value for Nitrogen" required="required" />
+      <input type="text" name="phosphorus" placeholder="Value for Phosphorus" required="required" />
+      <br>
+      <input type="text" name="pottasium" placeholder="Value for Pottasium" required="required" />
+      <input type="text" id="temp" name="temperature" placeholder="Value for temperature" required="required" />
+      <br>
+      <input type="text" id="humidity" name="humidity" placeholder="Value for humidity" required="required" />
+      <input type="text" name="ph" placeholder="Value for PH" required="required" />
+      <br>
+      <input type="text" name="rainfall" placeholder="Value for rainfall" required="required" />
+      <input type="text" name="Water Level" placeholder="Value for Water Level" required="required" />
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+  </div>
+  <br>
+  <br>
+  <div class="Predic">{{ prediction_text }}</div>
+
+
+  <div class="container cnt-2" id="aboutProject">
+    <div class="secHead">
+      <p>About Project :-</p>
+    </div>
+
+    <div class="content">
+      <img src="../static/css/images/planting-removebg-preview.png">
+      <ul>
+        <li>
+          Agriculture in India is livelihood for a majority of the population and can never be underestimated.
+          However, the agricultural sector is going through most stressed phase in the last three decades.
+          Indian agriculture is plagued by several problems; some of them are natural and some others are
+          manmade. Nearly three-quarters of Indian families depend on rural incomes. Every solution if
+          rightly executed can make a huge difference.</li>
+
+        <li>A Web-App with prediction capabilities using Machine Learning Algorithms that covers attributes
+          affecting a good crop yield.
+          The user needs to input basic attributes like temperature, rainfall, location, and soil condition
+          and submit it. They will directly get a crop recommendation that guarantees high yield.</li>
+
+        <li>Corp Yield Prediction System is a web based project which is built by Our Team to
+          to do a fair prediton of the crop yield in a particular area depending on various climatic
+          conditions and chemicals percentage which is used by the farmer for farming like Phosphorous,
+          Nitrogen, Potassium.</li>
+
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="container cnt-3" id="technology">
+
+    <div class="secHead">
+      <p>Technologies Used :-</p>
+    </div>
+
+    <div class="content">
+      <div class="col-1">
+        <ul>
+          <li>Geocoding API</li>
+          <li>Reverse Geocoding API</li>
+          <li>Javascript</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Machine Learning Algorithims</li>
+          <li>Machine Learning Model</li>
+          <li>Python</li>
+        </ul>
+      </div>
+      <div class="col-2">
+        <img src="../static/css/images/Technologies.png" width="650px" height="450px">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container cnt-4" id="aboutUs">
+      <div class="secHead">
+        <p>About Us :-</p>
+      </div>
+
+      <div class="content">
+        <ul>
+          <li>We are highly passionated about the technologies and their applications in real world.</li>
+          <li>There are lots of fun and  some special moments while building this applicaiton.</li>
+        </ul>
+        <br>
+        <br>
+        <h4>Developed By :-</h4>
+        <p>Sanat Jain Roll no.: 1901610100177</p>
+        <p>Email Id : sanatjain707@gmail.com</p>
+        <a href="https://www.linkedin.com/in/sanatjain707/" style="text-decoration: none;" class="btn btn-outline-dark">Linkedin</a>
+      </div>
+  </div>
+
+  <div class="Header">
+    <div class="siteName">
+      <p>Copyright &copy; Made By Sanat Jain. All Rights Reserved.</p>
+  </div>
+
+
+
+
+
+  <script src="../static/JS/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
